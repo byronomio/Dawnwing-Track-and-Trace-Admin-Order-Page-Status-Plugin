@@ -1,21 +1,20 @@
 <?php
 
 /**
- * @link			  https://www.semantica.co.za/
+ * @link			  https://www.byronjacobs.co.za/
  * @since			  1.0.0
- * @package			  Semantica Core
+ * @package			  Byron Jacobs
  *
  * @wordpress-plugin
  * Plugin Name:		  Dawnwing Track and Trace API
- * Plugin URI:		  https://www.semantica.co.za/
- * Description:		  Semantica Core Integrations
+ * Plugin URI:		  https://www.byronjacobs.co.za/
+ * Description:		  Byron Jacobs Core Integrations
  * Version:			  1.0.0
- * Author:			  Semantica
- * Author URI:		  https://www.semantica.co.za/
+ * Author:			  Byron Jacobs
+ * Author URI:		  https://www.byronjacobs.co.za/
  * License:			  GPL-2.0+
  * License URI:		  http://www.gnu.org/licenses/gpl-2.0.txt
  */
-
 
 function helper_data_clean($data, $code)
 {
@@ -45,7 +44,7 @@ function my_custom_tracking($order_id)
 	//$order_number2  = "FTGC400073";
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
-		CURLOPT_URL => 'http://swatws.dawnwing.co.za/dwwebservices/v2/live/api/trackandtrace?WaybillNo=FTGC' . $order_number,
+		CURLOPT_URL => 'http://swatws.dawnwing.co.za/dwwebservices/v2/live/UAT/trackandtrace?WaybillNo=FTGC' . $order_number,
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => '',
 		CURLOPT_MAXREDIRS => 10,
@@ -54,7 +53,7 @@ function my_custom_tracking($order_id)
 		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		CURLOPT_CUSTOMREQUEST => 'GET',
 		CURLOPT_HTTPHEADER => array(
-			'Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjExMCIsImV4cCI6MTk1MjYwMjY5NSwiaXNzIjoiaHR0cDovLzQxLjAuNjkuMTk3LyIsImF1ZCI6Imh0dHA6Ly80MS4wLjY5LjE5Ny8ifQ.FtovsNtqjCf_sgPsuFeKcUb6ai6Jt_upw5oyRnaqcglAC4uKDBPIAfsacGTEnnZx_GOWWMHatg8LOn1sNazbkw'
+			'Authorization: Bearer addyourtoken here'
 		),
 	));
 
@@ -109,7 +108,7 @@ if (!function_exists('dawnwing_track_and_trace')) {
 		$order_number  = $order->get_order_number();
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
-			CURLOPT_URL => 'http://swatws.dawnwing.co.za/dwwebservices/v2/live/api/trackandtrace?WaybillNo=FTGC' . $order_number,
+			CURLOPT_URL => 'http://swatws.dawnwing.co.za/dwwebservices/v2/UAT/api/trackandtrace?WaybillNo=FTGC' . $order_number,
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => '',
 			CURLOPT_MAXREDIRS => 10,
@@ -118,7 +117,7 @@ if (!function_exists('dawnwing_track_and_trace')) {
 			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 			CURLOPT_CUSTOMREQUEST => 'GET',
 			CURLOPT_HTTPHEADER => array(
-				'Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjExMCIsImV4cCI6MTk1MjYwMjY5NSwiaXNzIjoiaHR0cDovLzQxLjAuNjkuMTk3LyIsImF1ZCI6Imh0dHA6Ly80MS4wLjY5LjE5Ny8ifQ.FtovsNtqjCf_sgPsuFeKcUb6ai6Jt_upw5oyRnaqcglAC4uKDBPIAfsacGTEnnZx_GOWWMHatg8LOn1sNazbkw'
+				'Authorization: Bearer addyourtokenhere'
 			),
 		));
 
