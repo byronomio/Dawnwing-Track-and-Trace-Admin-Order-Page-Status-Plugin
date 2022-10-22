@@ -44,7 +44,7 @@ function my_custom_tracking($order_id)
 	//$order_number2  = "FTGC400073";
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
-		CURLOPT_URL => 'http://swatws.dawnwing.co.za/dwwebservices/v2/live/UAT/trackandtrace?WaybillNo=FTGC' . $order_number,
+		CURLOPT_URL => 'http://swatws.dawnwing.co.za/dwwebservices/v2/live/UAT/trackandtrace?WaybillNo=' . $order_number,
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => '',
 		CURLOPT_MAXREDIRS => 10,
@@ -108,7 +108,7 @@ if (!function_exists('dawnwing_track_and_trace')) {
 		$order_number  = $order->get_order_number();
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
-			CURLOPT_URL => 'http://swatws.dawnwing.co.za/dwwebservices/v2/UAT/api/trackandtrace?WaybillNo=FTGC' . $order_number,
+			CURLOPT_URL => 'http://swatws.dawnwing.co.za/dwwebservices/v2/UAT/api/trackandtrace?WaybillNo=' . $order_number,
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => '',
 			CURLOPT_MAXREDIRS => 10,
